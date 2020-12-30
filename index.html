@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Connect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <!-- Add logo and make it nice -->
+      <h2 id="title-logo"><img id="logo-img" src="images/img.svg">Food Connect</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="community-map.html">Community Map</a></li>
+        <li><a href="">Account</a></li>
+        <li><a href=""><p><span class="badge">5</span> Notifications</p></a></li>
+
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+
+    <div id="mission">
+      <p><br><br>‎‏‏‎ ‎</p>
+      <h1 id="mission-h1"><br>Our Goal:</h1>
+      <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
+      <h3 id="mission-title">To connect people in need of food resources and people that want to help. This creates local helping communities of people. We encourage all those that are looking for food banks or any food resources to use all that the website offers such as posting, the community food bank map, etc. We also encourage all those that can to take initiative and help those in need in your local community through food drives and donations to food banks.</h3>
+
+    </div>
+    
+
+    <section id="posts">
+      <hr>
+    <div class="col-sm-9">
+      <h1 id="h2"><small>Posts</small></h1>
+        <div>
+      <nav>
+    <!-- Region selector -->
+    <form id="region">
+      <label>
+        Region:
+      </label>
+      <select name="region" id="region-selector">
+        <option value="" disabled selected>Select your city</option>
+        <!-- <option value="toronto">Toronto</option>
+        <option value="toronto">Missisauga</option> -->
+        <option value="all">All cities</option>
+        <option value="toronto">Greater Toronto Area</option>
+        <option value="montreal">Montréal</option>
+        <option value="hamilton">Hamilton</option>
+        <input type="submit" value="Submit">
+      </select>
+
+    </form>
+
+    <div id="block">
+      <form id="user-type">
+        <label>
+          Post Filter:
+        </label>
+        <select name="user-type" id="user-type">
+          <option value="" disabled selected>Select post filters</option>
+          <!-- <option value="toronto">Toronto</option>
+          <option value="toronto">Missisauga</option> -->
+          <option value="all">All Posts</option>
+          <option value="food-drives">Food Bank</option>
+          <option value="food-drives">Organizations</option>
+          <option value="food-drives">Food Drive</option>
+          <option value="community">Community</option>
+          <option value="donations">Donations</option>
+          <option value="other">Other</option>
+          <input type="submit" value="Submit">
+        </select>
+      </form>
+    </div>
+  </nav>
+
+    </div>
+      <hr>
+
+      <!-- First post  -->
+      <h2>Local Food Drive</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by anonymous, Month XX, 202X.</h5>
+      <h5><span class="label label-danger">Food Drive</span> <span class="label label-primary">Community</span></h5><br>
+      <p>During these hard times, my community is planning a local food drive in (city, addresss) at XX:00 PM. Come stop by and donate non-perishable food. Please stay in your vehicle and open your trunk for safety reasons. If you are interested in volunteering please let me know.</p>
+      <p><span class="badge">1</span> Comments</p>
+      <form action="full-discussion1.html" role="view-more">
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-success">Full Discussion</button>
+      </form>
+      <br><br>
+
+      <!-- Second post -->
+
+      <hr>
+      <h2>Need help locating local food banks</h2>
+      <h5><span class="glyphicon glyphicon-time"></span> Post by anonymous, Month XX, 202X.</h5>
+      <h5 ><span id="color" class="label label-danger" >Food Bank</span> <span class="label label-primary">Community</span></h5><br>
+      <p>Hello! I am having diffculty locating the website or information about my local food bank in (city). Could someone please comment any links or addresses you can find, thank you.</p>
+
+      <p><span class="badge">3</span> Comments</p>
+      <form action="full-discussion2.html" role="view-more">
+        <div class="form-group">
+        </div>
+        <button type="submit" class="btn btn-success">Full Discussion</button>
+      </form>
+      <hr>
+      <br><br>
+
+      
+        <button type="submit" id= "load-more" class="btn btn-success">Load more posts</button>
+      <br><br><br><br><br><br><br><br><br>
+      <!-- Comment seciton -->
+      <!-- <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span class="badge">2</span> Comments:</p><br>
+      
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <img src="bandmember.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>Anja <small>Sep 29, 2015, 9:12 PM</small></h4>
+          <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+        </div>
+        <div class="col-sm-2 text-center">
+          <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4>John Row <small>Sep 25, 2015, 8:25 PM</small></h4>
+          <p>I am so happy for you man! Finally. I am looking forward to read about your trendy life. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <br>
+          <p><span class="badge">1</span> Comment:</p><br>
+          <div class="row">
+            <div class="col-sm-2 text-center">
+              <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+            </div>
+            <div class="col-xs-10">
+              <h4>Nested Bro <small>Sep 25, 2015, 8:28 PM</small></h4>
+              <p>Me too! WOW!</p>
+              <br>
+            </div>
+          </div>
+        </div> -->
+
+
+
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<div >
+  <footer class="container-fluid">
+    <p id="footer">Kurius Hacks, Food Connect 2020 Michael Fedotov</p>
+  </footer>
+</div>
+
+</body>
+</html>

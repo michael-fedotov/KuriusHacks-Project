@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Connect</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <!-- Add logo and make it nice -->
+      <h2 id="title-logo"><img id="logo-img" src="images/img.svg">Food Connect</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="community-map.html">Community Map</a></li>
+        <li><a href="">Account</a></li>
+        <li><a href=""><p><span class="badge">5</span> Notifications</p></a></li>
+
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+
+    
+
+    <section id="posts">
+      <hr>
+    <div class="col-sm-9">
+      <h1 id="h2"><small>Posts</small></h1>
+        <div>
+      <nav>
+    <!-- Region selector -->
+    <form id="region">
+      <label>
+        Region:
+      </label>
+      <select name="region" id="region-selector">
+        <option value="" disabled selected>Select your city</option>
+        <!-- <option value="toronto">Toronto</option>
+        <option value="toronto">Missisauga</option> -->
+        <option value="toronto">Coming Soon - Greater Toronto Area</option>
+        <option value="montreal">Coming Soon - Montréal</option>
+        <option value="hamilton">Hamilton</option>
+        <input type="submit" value="Submit">
+      </select>
+
+    </form>
+
+    <!-- <div id="block">
+      <form id="user-type">
+        <label>
+          Post Filter:
+        </label>
+        <select name="user-type" id="user-type">
+          <option value="" disabled selected>Select post filters</option> -->
+          <!-- <option value="toronto">Toronto</option>
+          <option value="toronto">Missisauga</option> -->
+          <!-- <option value="all">All Posts</option>
+          <option value="food-drives">Food Bank</option>
+          <option value="food-drives">Organizations</option>
+          <option value="food-drives">Food Drive</option>
+          <option value="community">Community</option>
+          <option value="donations">Donations</option>
+          <option value="other">Other</option>
+          <input type="submit" value="Submit">
+        </select>
+      </form>
+    </div> -->
+  </nav>
+
+    </div>
+      <hr>
+
+      
+
+      <!-- Add map into here -->
+      
+
+      
+      <br><br><br><br><br>
+      <!-- Comment seciton -->
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+      
+      <p><span class="badge">0</span> Comments:</p><br>
+      
+    
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+  </div>
+</div>
+
+<div >
+  <footer class="container-fluid">
+    <p id="footer">Kurius Hacks, Food Connect 2020 Michael Fedotov</p>
+  </footer>
+</div>
+
+</body>
+</html>
