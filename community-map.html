@@ -4,10 +4,127 @@
   <title>Food Connect</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- Google maps -->
+  <!-- <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXHTm-Daq3OmM-FY7O3GvbYt6YZMU27TA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script> -->
+
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXHTm-Daq3OmM-FY7O3GvbYt6YZMU27TA&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+    </style>
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // Hamilton map coordinates
+        const hamilton = { lat: 43.255722, lng: -79.871101};
+
+        
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 11,
+          center: hamilton,
+        });
+
+        // The location of food for kids
+        const food_for_kids = { lat: 43.251240, lng: -79.937530 };
+        // The marker, positioned at Uluru
+        const marker_food_for_kids = new google.maps.Marker({
+          position: food_for_kids,
+          map: map,
+        });
+
+        const infowindow_food_for_kids = new google.maps.InfoWindow();
+        infowindow_food_for_kids.setContent("Food4Kids, 405 Whitney Ave, Hamilton, ON  L8S 2H6, 905-741-0060");
+        // const marker = new google.maps.Marker({ map, position: cairo });
+        marker_food_for_kids.addListener("click", () => {
+          infowindow_food_for_kids.open(map, marker_food_for_kids);
+        });
+
+
+        // The location of food for kids
+        const salvation_army = { lat: 43.260490, lng: -79.872470 };
+        // The marker, positioned at Uluru
+        const marker_salvation_army = new google.maps.Marker({
+          position: salvation_army,
+          map: map,
+        });
+
+        const infowindow_salvation_army = new google.maps.InfoWindow();
+        infowindow_salvation_army.setContent("The Salvation Army, 80 Bay St N, Hamilton, ON  L8R 3N3, 905-540-1888");
+        // const marker = new google.maps.Marker({ map, position: cairo });
+        marker_salvation_army.addListener("click", () => {
+          infowindow_salvation_army.open(map, marker_salvation_army);
+        });
+
+
+        // The location of food for kids
+        const good_shepard = { lat: 43.259270, lng: -79.860210 };
+        // The marker, positioned at Uluru
+        const marker_good_shepard = new google.maps.Marker({
+          position: good_shepard,
+          map: map,
+        });
+
+        const infowindow_good_shepard = new google.maps.InfoWindow();
+        infowindow_good_shepard.setContent("Good Shepard Venture Center, 155 Cannon St E, Hamilton, ON  L8L 2A6, 905-972-9485");
+        // const marker = new google.maps.Marker({ map, position: cairo });
+        marker_good_shepard.addListener("click", () => {
+          infowindow_good_shepard.open(map, marker_good_shepard);
+        });
+
+
+        // The location of food for kids
+        const kings_way = { lat: 43.254830, lng: -79.858710 };
+        // The marker, positioned at Uluru
+        const marker_kings_way = new google.maps.Marker({
+          position: kings_way,
+          map: map,
+        });
+
+        const infowindow_kings_way = new google.maps.InfoWindow();
+        infowindow_kings_way.setContent("Kings Way Outreach Center, 390 King William St, Hamilton, ON  L8L 1P6, Office: 905-308-9991, Center: 905-296-9473");
+        // const marker = new google.maps.Marker({ map, position: cairo });
+        marker_kings_way.addListener("click", () => {
+          infowindow_kings_way.open(map, marker_kings_way);
+        });
+
+
+        // The location of food for kids
+        const eva_rothwell = { lat: 43.26455479695843, lng: -79.84305379669962};
+        // The marker, positioned at Uluru
+        const marker_eva_rothwell = new google.maps.Marker({
+          position: eva_rothwell,
+          map: map,
+        });
+
+        const infowindow_eva_rothwell = new google.maps.InfoWindow();
+        infowindow_eva_rothwell.setContent("Eva Rothwell Centre - Emergency Food Pantry, 460 Wentworth St N, Hamilton, ON  L8L 5W8, 905-526-1558");
+        // const marker = new google.maps.Marker({ map, position: cairo });
+        marker_eva_rothwell.addListener("click", () => {
+          infowindow_eva_rothwell.open(map, marker_eva_rothwell);
+        });
+      }
+    </script>
+
+
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- <script type="text/javascript" scr="C:\Users\m_fed\OneDrive\Documents\GitHub\KuriusHacks-Project\google_maps.js"></script> -->
 </head>
 <body>
 
@@ -39,7 +156,7 @@
     <section id="posts">
       <hr>
     <div class="col-sm-9">
-      <h1 id="h2"><small>Posts</small></h1>
+      <h1 id="h2"><small></small></h1>
         <div>
       <nav>
     <!-- Region selector -->
@@ -51,15 +168,43 @@
         <option value="" disabled selected>Select your city</option>
         <!-- <option value="toronto">Toronto</option>
         <option value="toronto">Missisauga</option> -->
-        <option value="toronto">Coming Soon - Greater Toronto Area</option>
-        <option value="montreal">Coming Soon - Montréal</option>
+        <!-- Add all the niagara regions -->
+        <option value="toronto">Greater Toronto Area</option>
+        <option value="montreal">Montréal</option>
         <option value="hamilton">Hamilton</option>
-        <input type="submit" value="Submit">
+        <option value="Burlington">Burlington</option>
+        <option value="Brant">Brant</option>
+        <option value="haldimandnorfolk">Haldimand Norfolk</option>
+        <option value="niagaranorthwest">Niagara North West</option>
+        <option value="Niagara">Niagara</option>
+        <!-- <input type="submit" value="Submit"> -->
       </select>
 
     </form>
 
+    <script>
+      // Parsing the user selection from the drop down list and setting the region url to that region.
+      var e = document.getElementById("region-selector");
+      e.onchange = function(){
+        var strUser = e.value;
+        var linkResources = document.getElementById('link-resources');
+        var url = "";
+        if (strUser == "toronto"){
+          url = "https://www.torontocentralhealthline.ca/listServicesDetailed.aspx?id=10572";
+        } else if (strUser == "montreal"){
+          url = "https://www.foodbankscanada.ca/Find-a-Food-Bank.aspx?postalcode=montreal";
+        } else{
+          url = "https://www.hnhbhealthline.ca/listservicesdetailed.aspx?id=10572&region=" + strUser;
+        }
+        linkResources.setAttribute('href', url);
+      };
+    </script>
+    <!-- Add section for the link -->
+    <h3><a id="link-resources" href="https://www.hnhbhealthline.ca/listservicesdetailed.aspx?id=10572&region=">Link to other food banks in selected area:</a></h3>
+
     <!-- <div id="block">
+    Potentially in the future implement a map filter
+
       <form id="user-type">
         <label>
           Post Filter:
@@ -87,7 +232,9 @@
       
 
       <!-- Add map into here -->
-      
+    <h2>Map of local food banks</h2>
+    <h3>Click on the red icons to view more info on the selected food bank</h3>
+    <div id="map"></div>
 
       
       <br><br><br><br><br>
@@ -120,6 +267,7 @@
     <p id="footer">Kurius Hacks, Food Connect 2020 Michael Fedotov</p>
   </footer>
 </div>
+  <script scr="script.js"></script>
 
 </body>
 </html>

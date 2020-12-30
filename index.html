@@ -4,13 +4,15 @@
   <title>Food Connect</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
+  <!-- Not showing empty post on load -->
+<body onload="javascript:notShowEmpty()">
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav">
@@ -43,8 +45,81 @@
     </div>
     
 
+
+
     <section id="posts">
       <hr>
+    <!-- Adding a post -->
+
+
+    <script>
+
+    function notShowEmpty() {
+      var z= document.getElementById("empty-post");
+      var targetDiv = document.getElementById("emptyp").innerHTML;
+      if (targetDiv == ""){
+        z.style.display = "none";
+      }
+      else{
+        z.style.display = "block";
+      }
+      
+    }
+
+    function postShow() {
+      var y= document.getElementById("formPost");
+      if (y.style.display === "none") {
+        y.style.display = "block";
+      } else {
+        y.style.display = "none";
+      }
+
+    }
+
+    function validateForm() {
+      // var x = document.getElementById("empty-post");
+      // x.style.display = "block";
+      
+
+      var username = document.forms["post-form"]["username"].value;
+      var tags = document.forms["post-form"]["label"].value;
+      var title = document.forms["post-form"]["title"].value;
+      var post = document.forms["post-form"]["post-text"].value;
+
+
+      document.getElementById("usernameBar").innerHTML = username;
+      document.getElementById("empty-post").innerHTML = tags;
+      document.getElementById("empty-post").innerHTML = title;
+      document.getElementById("emptyp").innerHTML = post;
+
+      return false;
+
+
+
+      
+      
+    }
+  </script>
+
+    <button type="submit" id= "new-post1" class="btn btn-success" onclick="postShow()">Create a post</button>
+    <br><br>
+
+    <div id="formPost" style="display:none">
+    <form id="post-form" action="#" onsubmit="validateForm() & return false">
+      <label for="username">Username:</label><br>
+      <input type="radio" id="anonymous" name="username" value="anonymous">
+      <label for="name">Anonymous</label><br>
+      <input type="radio" id="use-username" name="username" value="username">
+      <label for="male">Use your username</label><br><br>
+      <label for="tags">Tags (seperate with a comma):</label><br>
+      <input type="text" id="label" name="label" value=""><br><br>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" value="" placeholder="Type the post title"><br><br>
+      <label for="post-text">Post:</label><br>
+      <textarea id="post-text" name="post-text" placeholder="Type your post..."></textarea>
+    </form>
+    <button id="post-button "type="submit" form="post-form" value="send">Submit</button>
+  </div>
     <div class="col-sm-9">
       <h1 id="h2"><small>Posts</small></h1>
         <div>
@@ -91,6 +166,22 @@
 
     </div>
       <hr>
+
+      <!-- Empty post -->
+      <div id="empty-post">
+        <h2></h2>
+        <h5><span id="usernameBar" class="glyphicon glyphicon-time"></span> Post by anonymous, Month XX, 202X.</h5>
+        <h5><span class="label label-danger"></span> <span class="label label-primary"></span></h5><br>
+        <p id="emptyp"></p>
+        <p><span class="badge">0</span> Comments</p>
+        <form action="full-discussion1.html" role="view-more">
+          <div class="form-group">
+          </div>
+          <button type="submit" class="btn btn-success">Full Discussion</button>
+        </form>
+        <br><br>
+      </div>
+
 
       <!-- First post  -->
       <h2>Local Food Drive</h2>
@@ -179,6 +270,6 @@
     <p id="footer">Kurius Hacks, Food Connect 2020 Michael Fedotov</p>
   </footer>
 </div>
-
+<script scr="script.js"></script>
 </body>
 </html>
